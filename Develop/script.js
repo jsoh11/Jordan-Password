@@ -1,42 +1,85 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-let userLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
-  "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let userChar = [];
+
+let userNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 let userUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
   "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-let userNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+let userLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
+  "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-let userSpec = ["/", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")"]
+
+let userSpec = ["/", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+
+
 
 
 function generatePassword() {
-  let userChar = window.prompt("How many characters?");
+  chosenPassword = parseInt(window.prompt("How many characters?"));
+  console.log(chosenPassword)
+  let isNum = window.confirm("Would you like to include numbers?");
+  // console log anytime you dont know what is being stored in a variable
+  // ie. isNum
+  console.log(isNum)
+  let isUpper = window.confirm("Would you like to include Uppercase letters?");
+  console.log(isUpper)
+  let isLower = window.confirm("Would you like to include Lowercase letters?");
+  console.log(isLower)
+  let isSpec = window.confirm("Would you like to include Special characters?");
+  console.log(isSpec)
 
-  let userNum = window.confirm("Would you like to include numbers?");
+  // for conditionals need to make sure what we are checking is relevant to the data type we're comparing to
+  // our goal is IF a user said yes to a confirm prompt that the contents of that array are added/appended/pushed to our empty userChar array
 
-  let userUpper = window.confirm("Would you like to include Upper case letters?");
+  if (isNum) {
+    // if this evaluates to true then we need to add the contents of the num array userNum to the userChar array
+    userChar = userChar.concat(userNum)
+    console.log("new array", userChar)
+    
+  }
 
-  let userLower = window.confirm("Would you like to include Lower case letters?");
+  if (isUpper) {
 
-  let userSpec = window.confirm("Would you like to include Special characters?")
+    userChar = userChar.concat(userUpper)
+    console.log("new array ", userChar)
+  }
 
-  for (let i = 0; i < userLower.length; i++) {
-    userLower = Math.floor(Math.random()) = array[i];
+  if (isLower) {
+    userChar = userChar.concat(userLower)
+    console.log("new array ", userChar)
 
   }
 
-  if (userNum === true) {
-    for (let i = 0; i < userNum.length; i++) {
-      userLower = Math.floor(Math.random()) = array[i];
-
-    }
+  if (isSpec) {
+    userChar = userChar.concat(userSpec)
+    console.log("new array ", userChar)
 
   }
+  
+   for (let i = 0; i = chosenPassword; i++) {
+     let randomNumber = Math.floor(Math.random()*userChar.length)
+     let password = [];
+     password.push(userChar[randomNumber])
+     console.log(password)
+     return password
+   }     
+    
+  
+    
+  
+
+  // after we've added all of the new characters that the user wanted into the the empty array, we need to start looping and grabbing characters from that array based on a random index
+  // each character will be grabbed one at a time and we need to store these as a string as the final password
+  // you can use concat here as well so we concat the new character on the variable each time
+
+  //  dont forget we are indexing through the new array we just made and we need to store the resultant concatenation in a new variable
+  // for (let i = 0; i < passwordLength; i++) {
+
+  
 }
-
 
 // Write password to the #password input
 function writePassword() {
