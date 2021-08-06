@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+
 let userChar = [];
 
 let userNum = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -19,6 +20,7 @@ let userSpec = ["/", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 
 function generatePassword() {
   chosenPassword = parseInt(window.prompt("How many characters?"));
+
   console.log(chosenPassword)
   let isNum = window.confirm("Would you like to include numbers?");
   // console log anytime you dont know what is being stored in a variable
@@ -38,7 +40,7 @@ function generatePassword() {
     // if this evaluates to true then we need to add the contents of the num array userNum to the userChar array
     userChar = userChar.concat(userNum)
     console.log("new array", userChar)
-    
+
   }
 
   if (isUpper) {
@@ -58,18 +60,20 @@ function generatePassword() {
     console.log("new array ", userChar)
 
   }
-  
-   for (let i = 0; i = chosenPassword; i++) {
-     let randomNumber = Math.floor(Math.random()*userChar.length)
-     let password = [];
-     password.push(userChar[randomNumber])
-     console.log(password)
-     return password
-   }     
+
+
+  for (let i = 0; i < chosenPassword; i++) {
+    let randomNumber = Math.floor(Math.random() * userChar.length);
+    let newPass = [];
+    newPass.push(userChar[randomNumber]);
+    console.log(newPass);
     
+  }
   
-    
-  
+}
+
+
+
 
   // after we've added all of the new characters that the user wanted into the the empty array, we need to start looping and grabbing characters from that array based on a random index
   // each character will be grabbed one at a time and we need to store these as a string as the final password
@@ -78,8 +82,9 @@ function generatePassword() {
   //  dont forget we are indexing through the new array we just made and we need to store the resultant concatenation in a new variable
   // for (let i = 0; i < passwordLength; i++) {
 
-  
-}
+
+
+
 
 // Write password to the #password input
 function writePassword() {
