@@ -26,6 +26,9 @@
 
 ## About The Project
 
+![screenshot](/assets/Screenshot.png)
+format: ![screenshot](https://jsoh11.github.io/Jordan-Password/)
+
 Password Generator
 
 This password generator allows the user to select multiple deferent variables depending on what they need their password to contain. Weather it may be length, Upper/Lower case letters and special characters. 
