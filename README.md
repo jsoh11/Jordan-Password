@@ -26,7 +26,7 @@
 
 ## About The Project
 
-![screenshot](/assets/Screenshot.png)
+![screenshot](/Assets/Screenshot.png)
 format: ![screenshot](https://jsoh11.github.io/Jordan-Password/)
 
 Password Generator
